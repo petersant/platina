@@ -1,198 +1,138 @@
-/* Variables */
-
-$body-font: 'IBM Plex Sans', sans-serif;
-$heading-font: 'IBM Plex Sans Condensed', sans-serif;
-$base-font-size: 16px;
-$font-color: #252227;
-$gray: #eee;
-$accent: #9c2532;
-$pinterest: #bd081c;
-$twitter: #1da1f2;
-$instagram: #000;
-$tablet: 768px;
-$desktop: 1024px;
-
-
-body, html {
-    padding: 0;
-    margin: 0;
-} 
+$darkRed: #e02a31;
+$red: #f02f36;
 
 body {
-    font-family: $body-font;
-    font-size: $base-font-size;
-    color: $font-color;
-}
- 
-div.wrapper {
-    display: grid;
-    width: 100vw;
-    grid-template-areas: "content" "visual";
-    grid-template-rows: 61.8034% 38.1966%;
-    text-align: center;
-    @media screen and (min-width: $tablet){
-        grid-template-areas: "content visual";
-        grid-template-columns: 61.8034% 38.1966%;
-        grid-template-rows: 1fr 0fr;
-        height: 100vh;
-    }
-
-    @media screen and (min-width: $desktop){
-        grid-template-areas: "content visual";
-        grid-template-columns: 61.8034% 38.1966%;
-        grid-template-rows: 1fr 0fr;
-        height: 100vh;
-        text-align: left;
-    }
+ margin: 0;
+ overflow-x: hidden;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-    &:hover {
-        color: $accent;
-        cursor: pointer;
-    }
+.container {
+  width: 1000px;
+  display: block;
+  margin: 0 auto;
 }
 
-.content {
-    grid-area: content;
-    display: grid;
-    grid-template-areas: "header" "sign-up" "social";
-    grid-template-rows: 1fr 2fr 1fr;
-    padding: 2em;
+.darkRed {
+  background-color: $darkRed;
 }
 
-.visual {
-    grid-area: visual;
-    background-color: $gray;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: 50%;
-    @media screen and (min-width: $tablet) {
-        background-image: url('static/scott-webb-207709-unsplash.jpg');
-    } 
+.red {
+  background-color: $red;
 }
-
 
 header {
-    grid-area: header;
+  .faq-text { 
+    padding: 20px 0;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .completeLeft {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    z-index: -1;
+    left: -210px;
+  }
+
+  .completeRight {
+    position: absolute;
+    top: 0;
+    bottom: -10px;
+    width: 300px;
+    z-index: -1;
+    right: -210px;
+  }
+
+  .topCorner {
+    position: relative;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    h1 {
-        display: inline-block;
-        font-family: $heading-font;
-    }
-    nav {
-        ul {
-            display: flex;
-            flex-direction: row;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            justify-content: center;
-            @media screen and (min-width: $desktop) {
-                justify-content: flex-start;
-            }
-            li {
-                padding: 0 1em;
-                border-left: 1px solid $gray;
-                &:first-child {
-                    padding-left: 0;
-                    border: none;
-                }
+    align-items: center;
+  }
 
-                &:last-child {
-                    padding-right: 0;
-                }
-        
-            }
-        }
-    }
+  .whats {
+    text-align: right;
+    position: relative;
+    bottom: -.6em;
+  }
+  .contact {
+    color: rgb(255, 255, 255);
+    height: 100%;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+
+  .whatsNumber {
+    font-size: 1em;
+  }
+
+  .whatsSub {
+    font-size: 0.9em;
+    font-weight: normal;
+  }
+
+  .mail {
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .whats-ic {
+    height: 16px;
+    width: 16px;
+    padding-right: 8px;
+    position: relative;
+    bottom: -3px;
+  }
+
+  .phone-ic {
+    height: 17px;
+    width: 13px;
+    padding-right: 8px;
+    position: relative;
+    bottom: -3px;
+  }
+
+  .chat-ic {
+    padding-right: 8px;
+    position: relative;
+    bottom: -3px;
+    width: 17px;
+    height: 17px;
+  }
 }
 
-.newsletter {
-    grid-area: sign-up;
-    h2 {
-        font-family: $heading-font;
-    }
+footer {
+  background-color: #000;
+  color: rgb(255, 255, 255);
 
-    .form-wrapper {
-        display: flex;
-        flex-direction: column;
-        @media screen and (min-width: $desktop) {
-            flex-direction: row;
-        }
-        input {
-            margin: 1em 0;
-            flex-grow: 1;
-            height: 2em;
-            border-top: 1px solid $gray;
-            padding: 1em;
-            border-left: 3px solid $accent;
-            box-shadow: 2px 3px 12px $gray;
-            font-size: 16px;
-        }
+  .wrapper {
+    padding: 60px 0 70px;
+    text-transform: uppercase;
+  }
 
-        button {
-            margin: 1em 0;
-            background-color: $accent;
-            width: 100%;
-            color: white;
-            font-size: 16px;
-            font-weight: 700;
-            border: 1px solid $accent;
-            height: 2em;
-            padding: 2em;
-            line-height: 0em;
-            box-shadow: 2px 3px 12px $gray;
-            &:hover {
-                background-color: lighten($accent, 10);
-                border: 1px solid lighten($accent, 10);
-            }
-            @media screen and (min-width: $desktop) {
-                margin-left: 24px;
-                width: auto;
-            }
-        }
-    }  
-}
+  .divisor {
+    color: rgb(229, 0, 0);
+    padding: 15px 0 10px;
+  }
 
-.social {
+  .title {
+    font-weight: bold;
+  }
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        justify-content: center;
-        @media screen and (min-width: $desktop) {
-            justify-content: flex-start;
-        }
-        li {
-            padding: 0 1em;
-            font-size: 1.5em;
-            &:first-child {
-                padding-left: 0;
-            }
+  .item {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: block;
+    line-height: 2em;
+  }
+  
+  .copyright {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #232323;
+  }
 
-            &:last-child {
-                padding-right: 0;
-            }
-    
-        }
-
-        .fa-instagram {
-            color: $instagram;
-        }
-
-        .fa-pinterest {
-            color: $pinterest;
-        }
-
-        .fa-twitter {
-            color: $twitter;
-        }
-    }
 }
